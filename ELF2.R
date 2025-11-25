@@ -128,7 +128,7 @@ ggplot(elf_all, aes(x = Limit, y = ELF, group = HazardGroup)) +
   scale_alpha_manual(values = c(Hazard = 0.5, Population = 1.0)) +
   
   labs(
-    title = "ELF Curves by Hazard Group and Population",
+    title = "ELF Curves by HG",
     subtitle = paste(
       "Baseline:",
       baseline_state,
@@ -139,4 +139,7 @@ ggplot(elf_all, aes(x = Limit, y = ELF, group = HazardGroup)) +
     y = "ELF = E[min(X, L)] / E[X]",
     color = "Level of Effect"
   ) +
-  theme_minimal(base_size = 13)
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(color = "darkblue")
+  )
